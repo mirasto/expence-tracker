@@ -1,0 +1,251 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-hover);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.goalInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-surface-hover), var(--color-bg));
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.goalName {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.deadline {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.menuTrigger {
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  
+  &:hover, &[data-state='open'] {
+    background-color: var(--color-surface-hover);
+    color: var(--color-text-primary);
+  }
+}
+
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.amounts {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.current {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.target {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  min-height: 24px;
+  padding: 4px 0;
+}
+
+.remaining {
+  color: var(--color-text-muted);
+}
+
+.completed {
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.monthlyNeeded {
+  color: var(--color-primary);
+  background-color: rgba(79, 70, 229, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.actionBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px; /* Larger touch target */
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.withdrawBtn {
+  border: 2px solid var(--color-border);
+  color: var(--color-text-secondary);
+  
+  &:hover:not(:disabled) {
+    border-color: var(--color-text-secondary);
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+  }
+}
+
+.depositBtn {
+  background: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+  border: none;
+  
+  &:hover:not(:disabled) {
+    background: var(--color-primary-hover);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown Styles */
+.dropdownContent {
+  min-width: 180px;
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-border);
+  z-index: 1000;
+  animation: slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdownItem {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-text-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 12px;
+  position: relative;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+  gap: 12px;
+  transition: all 0.1s;
+
+  &[data-highlighted] {
+    background-color: var(--color-surface-hover);
+    color: var(--color-primary);
+  }
+
+  &.deleteItem {
+    color: var(--color-danger);
+    
+    &[data-highlighted] {
+      background-color: rgba(225, 29, 72, 0.1);
+      color: var(--color-danger);
+    }
+  }
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 6px;
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

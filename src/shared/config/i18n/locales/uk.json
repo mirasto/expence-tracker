@@ -1,0 +1,101 @@
+{
+  "common": {
+    "loading": "Завантаження...",
+    "error": "Помилка",
+    "save": "Зберегти",
+    "cancel": "Скасувати",
+    "delete": "Видалити",
+    "edit": "Редагувати",
+    "add": "Додати",
+    "actions": "Дії",
+    "confirm": "Підтвердити",
+    "viewDetails": "Переглянути деталі",
+    "duplicate": "Дублювати"
+  },
+  "auth": {
+    "login": "Увійти",
+    "register": "Реєстрація",
+    "email": "Електронна пошта",
+    "password": "Пароль",
+    "confirmPassword": "Підтвердіть пароль",
+    "guestLogin": "Продовжити як гість",
+    "googleLogin": "Продовжити через Google",
+    "welcome": "З поверненням",
+    "createAccount": "Створити акаунт"
+  },
+  "dashboard": {
+    "welcome": "З поверненням, {{name}}!",
+    "totalBalance": "Загальний баланс",
+    "totalIncome": "Загальний дохід",
+    "totalExpenses": "Загальні витрати",
+    "recentTransactions": "Останні транзакції",
+    "expensesByCategory": "Витрати за категоріями",
+    "viewAll": "Переглянути всі",
+    "noData": "Немає даних"
+  },
+  "transactions": {
+    "title": "Транзакції",
+    "addTransaction": "Додати транзакцію",
+    "noTransactions": "Транзакцій не знайдено. Почніть, додавши одну!",
+    "confirmDelete": "Ви впевнені, що хочете видалити цю транзакцію?",
+    "type": "Тип",
+    "category": "Категорія",
+    "amount": "Сума",
+    "date": "Дата",
+    "description": "Опис",
+    "income": "Дохід",
+    "expense": "Витрата",
+    "categories": {
+      "food": "Їжа",
+      "transport": "Транспорт",
+      "utilities": "Комунальні",
+      "entertainment": "Розваги",
+      "shopping": "Шопінг",
+      "health": "Здоров'я",
+      "education": "Освіта",
+      "housing": "Житло",
+      "salary": "Зарплата",
+      "investment": "Інвестиції",
+      "other": "Інше"
+    }
+  },
+  "categories": {
+    "food": "Їжа",
+    "transport": "Транспорт",
+    "utilities": "Комунальні",
+    "entertainment": "Розваги",
+    "shopping": "Шопінг",
+    "health": "Здоров'я",
+    "education": "Освіта",
+    "housing": "Житло",
+    "salary": "Зарплата",
+    "investment": "Інвестиції",
+    "other": "Інше"
+  },
+  "budget": {
+    "title": "Бюджети",
+    "subtitle": "Керуйте своїми місячними лімітами витрат",
+    "createBudget": "Створити бюджет",
+    "category": "Категорія",
+    "amount": "Місячний ліміт",
+    "overBudgetBy": "Перевищення на {{amount}}",
+    "leftToSpend": "Залишилось: {{amount}}",
+    "noBudgets": "Бюджети не встановлені",
+    "noBudgetsDesc": "Створіть бюджет, щоб відстежувати витрати та заощаджувати.",
+    "confirmDelete": "Ви впевнені, що хочете видалити цей бюджет?",
+    "confirmDeleteTitle": "Видалити бюджет?",
+    "confirmDeleteDesc": "Ви впевнені, що хочете видалити бюджет для {{category}}? Цю дію неможливо скасувати.",
+    "deleteSuccess": "Бюджет успішно видалено",
+    "errors": {
+      "categoryExists": "Бюджет для цієї категорії вже існує"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Дашборд",
+    "transactions": "Транзакції",
+    "budgets": "Бюджети",
+    "goals": "Цілі заощаджень",
+    "settings": "Налаштування",
+    "logout": "Вийти"
+  }
+}

@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.contentSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: var(--color-bg);
+  
+  @media (min-width: 1024px) {
+    max-width: 500px;
+  }
+}
+
+.header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+
+  &.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+  }
+
+  &:hover:not(.active) {
+    color: var(--color-text);
+  }
+}
+
+.formContainer {
+  margin-bottom: 24px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-border);
+  }
+
+  span {
+    padding: 0 12px;
+  }
+}
+
+.socialActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.visualSide {
+  display: none;
+  flex: 1;
+  background-color: var(--color-surface);
+  background-image: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 100%);
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 48px;
+
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+}
+
+.visualContent {
+  text-align: center;
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+}

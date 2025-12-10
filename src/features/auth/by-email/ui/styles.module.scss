@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.errorMessage {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+  padding: 8px;
+  background-color: rgb(239 68 68 / 0.1);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
