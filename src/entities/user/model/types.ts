@@ -12,4 +12,3 @@ export interface UserState {
   isLoading: boolean;
   error: string | null;
   isInitialized: boolean;
-}
