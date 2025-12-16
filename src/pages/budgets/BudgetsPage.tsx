@@ -26,6 +26,7 @@ export const BudgetsPage = () => {
           <h1>{t('budget.title', 'Budgets')}</h1>
           <p>{t('budget.subtitle', 'Manage your monthly spending limits')}</p>
         </div>
+        </div>
         <AddBudgetModal />
       </header>
 
