@@ -7,6 +7,7 @@ const selectBudgets = (state: RootState) => state.budgets.budgets;
 const selectTransactions = (state: RootState) => state.transactions.transactions;
 
 export const selectBudgetsWithProgress = createSelector(
+export const selectBudgetsWithProgress = createSelector(
   [selectBudgets, selectTransactions],
   (budgets, transactions) => {
     const now = new Date();
