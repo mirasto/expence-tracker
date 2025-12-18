@@ -20,7 +20,7 @@ export const selectBudgetsWithProgress = createSelector(
             t.type === 'expense' &&
             t.category === budget.category &&
             isSameMonth(transactionDate, now) &&
-            isSameYear(transactionDate, now)
+        isOverBudget,
           );
         })
         .reduce((sum, t) => sum + t.amount, 0);
@@ -34,7 +34,7 @@ export const selectBudgetsWithProgress = createSelector(
         spent,
         remaining,
         percentage,
-        isOverBudget,
+            isSameYear(transactionDate, now)
       };
     });
   }
