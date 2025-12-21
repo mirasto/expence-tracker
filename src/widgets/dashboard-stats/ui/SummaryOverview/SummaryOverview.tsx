@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TrendingUp, TrendingDown, Wallet, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+            <Skeleton width="60%" height={24} className="mb-2" />
 import { Transaction } from '@/entities/transaction/model/types';
 import { Card } from '@/shared/ui/Card/Card';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
@@ -38,7 +38,7 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
         {[1, 2, 3].map((i) => (
           <Card key={i} className={styles.card}>
             <Skeleton width={40} height={40} circle className="mb-4" />
-            <Skeleton width="60%" height={24} className="mb-2" />
+import { TrendingUp, TrendingDown, Wallet, ArrowUpRight, ArrowDownRight } from 'lucide-react';
             <Skeleton width="80%" height={32} />
           </Card>
         ))}
