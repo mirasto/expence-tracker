@@ -9,6 +9,6 @@ export const transactionSchema = z.object({
   ]),
   description: z.string().min(1, 'Description is required'),
   date: z.string(), // We'll handle date conversion in the component
-});
-
 export type TransactionFormValues = z.infer<typeof transactionSchema>;
+
+});
