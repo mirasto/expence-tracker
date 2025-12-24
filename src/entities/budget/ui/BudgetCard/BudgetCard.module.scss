@@ -126,7 +126,6 @@
   user-select: none;
   outline: none;
   cursor: pointer;
-  gap: 10px;
 
   &[data-highlighted] {
     background-color: var(--color-surface-hover);
