@@ -15,6 +15,7 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
   const location = useLocation();
   
   const getTitle = (path: string) => {
+  const getTitle = (path: string) => {
     switch (path) {
       case '/': return t('sidebar.dashboard');
       case '/transactions': return t('sidebar.transactions');
