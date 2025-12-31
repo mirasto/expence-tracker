@@ -24,11 +24,11 @@ export const TransactionItem = ({
 
   return (
     <div 
-      className={clsx(styles.item, variant === 'minimal' && styles.minimal, className)}
+        {transaction.category.charAt(0).toUpperCase()}
       onClick={onClick}
     >
       <div className={styles.icon}>
-        {transaction.category.charAt(0).toUpperCase()}
+      className={clsx(styles.item, variant === 'minimal' && styles.minimal, className)}
       </div>
       
       <div className={styles.details}>
