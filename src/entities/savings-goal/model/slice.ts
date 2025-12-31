@@ -64,11 +64,11 @@ export const deleteSavingsGoal = createAsyncThunk(
       const goals = getLocalSavingsGoals(userId);
       const filteredGoals = goals.filter(g => g.id !== id);
       saveLocalSavingsGoals(userId, filteredGoals);
-
+    }
       return id;
     } catch (error: any) {
       return rejectWithValue(error.message);
-    }
+
   }
 );
 
