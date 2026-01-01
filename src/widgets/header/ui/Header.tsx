@@ -22,7 +22,6 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
       case '/budgets': return t('sidebar.budgets');
       case '/goals': return t('sidebar.goals');
       case '/settings': return t('sidebar.settings');
-      default: return t('sidebar.dashboard');
     }
   };
 
