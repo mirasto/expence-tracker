@@ -17,7 +17,7 @@ export const TransactionItem = ({
   transaction,
   actions,
   variant = 'default',
-  className,
+      </div>
   onClick
 }: TransactionItemProps) => {
   const { t } = useTranslation();
@@ -29,7 +29,7 @@ export const TransactionItem = ({
     >
       <div className={styles.icon}>
       className={clsx(styles.item, variant === 'minimal' && styles.minimal, className)}
-      </div>
+  className,
       
       <div className={styles.details}>
         <div className={styles.description}>{transaction.description}</div>
