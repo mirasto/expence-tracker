@@ -114,6 +114,7 @@ export const savingsGoalSlice = createSlice({
       .addCase(fetchSavingsGoals.pending, (state) => {
         state.isLoading = true;
         state.error = null;
+        state.error = null;
       })
       .addCase(fetchSavingsGoals.fulfilled, (state, action) => {
         state.isLoading = false;
