@@ -28,6 +28,7 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
     return {
       balance: income - expenses,
       income,
+      income,
       expenses
     };
   }, [transactions]);
