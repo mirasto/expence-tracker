@@ -20,6 +20,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </label>
         )}
         <div className={styles.inputWrapper}>
+        <div className={styles.inputWrapper}>
           <input
             id={inputId}
             className={clsx(styles.input, error && styles.error)}
