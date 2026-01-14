@@ -15,6 +15,7 @@ export const updateUserProfile = createAsyncThunk(
           photoURL,
         });
         
+        
         // Return the updated fields
         return { displayName, photoURL };
       }
