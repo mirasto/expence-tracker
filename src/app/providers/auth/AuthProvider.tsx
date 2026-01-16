@@ -1,4 +1,4 @@
-      if (user) {
+import { useEffect, ReactNode } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/shared/api/firebase';
 import { useAppDispatch } from '@/app/providers/store/store';
@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     dispatch(setLoading(true));
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-import { useEffect, ReactNode } from 'react';
+      if (user) {
         dispatch(setUser({
           uid: user.uid,
           email: user.email,

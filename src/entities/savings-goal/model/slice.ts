@@ -64,11 +64,11 @@ export const deleteSavingsGoal = createAsyncThunk(
       const goals = getLocalSavingsGoals(userId);
       const filteredGoals = goals.filter(g => g.id !== id);
       saveLocalSavingsGoals(userId, filteredGoals);
-    }
+
       return id;
     } catch (error: any) {
       return rejectWithValue(error.message);
-
+    }
   }
 );
 
@@ -113,7 +113,6 @@ export const savingsGoalSlice = createSlice({
       // Fetch
       .addCase(fetchSavingsGoals.pending, (state) => {
         state.isLoading = true;
-        state.error = null;
         state.error = null;
       })
       .addCase(fetchSavingsGoals.fulfilled, (state, action) => {

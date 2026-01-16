@@ -56,6 +56,7 @@
   font-weight: 500;
   color: var(--color-text-muted);
   border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
 
   &.active {
     color: var(--color-primary);

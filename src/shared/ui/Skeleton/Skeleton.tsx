@@ -13,7 +13,6 @@ export const Skeleton = ({ className, width, height, circle }: SkeletonProps) =>
     <div 
       className={clsx(styles.skeleton, circle && styles.circle, className)}
       style={{ width, height }}
-      style={{ width, height }}
     />
   );
 };

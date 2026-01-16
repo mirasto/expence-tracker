@@ -24,7 +24,7 @@ export const MonthlyTrend = ({ transactions }: MonthlyTrendProps) => {
         income: 0,
         expense: 0
       };
-              type="monotone" 
+    });
 
     transactions.forEach(t => {
       const tDate = new Date(t.date);
@@ -93,7 +93,7 @@ export const MonthlyTrend = ({ transactions }: MonthlyTrendProps) => {
               iconType="circle"
             />
             <Area 
-    });
+              type="monotone" 
               dataKey="income" 
               name={t('transactions.income')}
               stroke="var(--color-success)" 

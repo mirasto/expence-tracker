@@ -40,7 +40,6 @@ export const DashboardPage = () => {
             <RecentTransactions transactions={transactions} isLoading={isLoading} />
           </div>
         </div>
-        </div>
         
         <div className={styles.sideContent}>
           <ExpenseDoughnut transactions={transactions} />

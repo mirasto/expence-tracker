@@ -7,7 +7,6 @@ const selectBudgets = (state: RootState) => state.budgets.budgets;
 const selectTransactions = (state: RootState) => state.transactions.transactions;
 
 export const selectBudgetsWithProgress = createSelector(
-export const selectBudgetsWithProgress = createSelector(
   [selectBudgets, selectTransactions],
   (budgets, transactions) => {
     const now = new Date();
@@ -21,7 +20,7 @@ export const selectBudgetsWithProgress = createSelector(
             t.type === 'expense' &&
             t.category === budget.category &&
             isSameMonth(transactionDate, now) &&
-        isOverBudget,
+            isSameYear(transactionDate, now)
           );
         })
         .reduce((sum, t) => sum + t.amount, 0);
@@ -35,7 +34,7 @@ export const selectBudgetsWithProgress = createSelector(
         spent,
         remaining,
         percentage,
-            isSameYear(transactionDate, now)
+        isOverBudget,
       };
     });
   }

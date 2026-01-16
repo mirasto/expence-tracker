@@ -51,7 +51,7 @@
   flex-direction: column;
   gap: 2px;
 }
-  transition: all 0.2s;
+
 .goalName {
   font-size: 18px;
   font-weight: 700;
@@ -77,7 +77,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  transition: all 0.2s;
   
   &:hover, &[data-state='open'] {
     background-color: var(--color-surface-hover);
@@ -240,7 +240,6 @@
 }
 
 @keyframes slideUpAndFade {
-  from {
   from {
     opacity: 0;
     transform: translateY(4px);

@@ -2,7 +2,6 @@ import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '@/shared/api/firebase';
 import { User, UserState } from './types';
-import { User, UserState } from './types';
 
 // Async Thunks
 export const updateUserProfile = createAsyncThunk(
@@ -14,7 +13,6 @@ export const updateUserProfile = createAsyncThunk(
           displayName,
           photoURL,
         });
-        
         
         // Return the updated fields
         return { displayName, photoURL };

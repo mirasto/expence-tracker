@@ -17,19 +17,19 @@ export const TransactionItem = ({
   transaction,
   actions,
   variant = 'default',
-      </div>
+  className,
   onClick
 }: TransactionItemProps) => {
   const { t } = useTranslation();
 
   return (
     <div 
-        {transaction.category.charAt(0).toUpperCase()}
+      className={clsx(styles.item, variant === 'minimal' && styles.minimal, className)}
       onClick={onClick}
     >
       <div className={styles.icon}>
-      className={clsx(styles.item, variant === 'minimal' && styles.minimal, className)}
-  className,
+        {transaction.category.charAt(0).toUpperCase()}
+      </div>
       
       <div className={styles.details}>
         <div className={styles.description}>{transaction.description}</div>

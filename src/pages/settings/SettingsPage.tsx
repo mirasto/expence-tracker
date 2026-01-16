@@ -9,7 +9,6 @@ import styles from './SettingsPage.module.scss';
 export const SettingsPage = () => {
   const { t } = useTranslation();
 
-
   return (
     <div className={styles.container}>
       <header className={styles.header}>

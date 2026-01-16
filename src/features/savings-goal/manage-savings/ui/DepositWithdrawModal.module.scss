@@ -1,4 +1,4 @@
-  font-size: 24px;
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
   backdrop-filter: blur(4px);
   animation: fadeIn 0.2s ease;
 }
-  gap: 20px;
+
 .modal {
   background-color: var(--color-surface);
   border-radius: 16px;
@@ -41,7 +41,7 @@
 .closeBtn {
   background: none;
   border: none;
-.overlay {
+  font-size: 24px;
   cursor: pointer;
   color: var(--color-text-secondary);
   
@@ -54,7 +54,7 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-
+  gap: 20px;
 }
 
 .currentInfo {

@@ -5,13 +5,13 @@ export const loginSchema = z.object({
   password: z.string().min(6, 'Password must be at least 6 characters'),
 });
 
-  path: ["confirmPassword"],
+export const registerSchema = z.object({
   email: z.string().email('Invalid email address'),
   password: z.string().min(6, 'Password must be at least 6 characters'),
   confirmPassword: z.string(),
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Passwords don't match",
-export const registerSchema = z.object({
+  path: ["confirmPassword"],
 });
 
 export type LoginFormValues = z.infer<typeof loginSchema>;
