@@ -8,13 +8,8 @@ export const CATEGORIES: [TransactionCategory, ...TransactionCategory[]] = [
 ];
 
 export const budgetSchema = z.object({
-  category: z.enum(CATEGORIES, {
-    errorMap: () => ({ message: 'Please select a valid category' }),
-  }),
-  amount: z.number({
-    required_error: 'Amount is required',
-    invalid_type_error: 'Amount must be a number',
-  }).min(1, 'Amount must be at least 1'),
+  category: z.enum(CATEGORIES),
+  amount: z.number().min(1, 'Amount must be at least 1'),
 });
 
 export type BudgetFormValues = z.infer<typeof budgetSchema>;
