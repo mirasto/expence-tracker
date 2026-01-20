@@ -18,7 +18,7 @@
   flex-direction: column;
   gap: 16px;
   
-  /* Only switch to row layout on tablet where it has full width */
+  
   @media (min-width: 768px) and (max-width: 1023px) {
     flex-direction: row;
     align-items: center;
@@ -67,7 +67,7 @@
   gap: 8px;
   padding-right: 0;
   width: 100%;
-  /* Removed scrolling constraints */
+  
 }
 
 .legendItem {
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  min-width: 0; /* Enable text truncation if needed */
+  min-width: 0; 
 }
 
 .legendColor {

@@ -42,8 +42,8 @@ export const ExpenseDoughnut = ({ transactions }: ExpenseDoughnutProps) => {
     const sorted = grouped
       .sort((a, b) => b.value - a.value);
 
-    // Grouping logic for excessive data points (Requirement 4)
-    // We limit to 5 categories + "Other" to ensure it fits in viewport (Requirement 1)
+    
+    
     const MAX_VISIBLE_CATEGORIES = 5;
     let finalData = sorted;
     let hasHidden = false;

@@ -1,27 +1,27 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { Budget, BudgetState } from './types';
 
-// Helper to get budgets from localStorage
+
 const getLocalBudgets = (userId: string): Budget[] => {
   const data = localStorage.getItem(`budgets_${userId}`);
   return data ? JSON.parse(data) : [];
 };
 
-// Helper to save budgets to localStorage
+
 const saveLocalBudgets = (userId: string, budgets: Budget[]) => {
   localStorage.setItem(`budgets_${userId}`, JSON.stringify(budgets));
 };
 
-// Async Thunks
+
 export const fetchBudgets = createAsyncThunk(
   'budgets/fetch',
   async (userId: string, { rejectWithValue }) => {
     try {
-      // Simulate API delay
+      
       await new Promise(resolve => setTimeout(resolve, 500));
       
       const budgets = getLocalBudgets(userId);
-      // Sort by createdAt desc
+      
       return budgets.sort((a, b) => b.createdAt - a.createdAt);
     } catch (error: any) {
       return rejectWithValue(error.message);
@@ -33,7 +33,7 @@ export const addBudget = createAsyncThunk(
   'budgets/add',
   async (budget: Omit<Budget, 'id' | 'createdAt' | 'updatedAt'>, { rejectWithValue }) => {
     try {
-      // Simulate API delay
+      
       await new Promise(resolve => setTimeout(resolve, 500));
 
       const newBudget: Budget = {
@@ -58,7 +58,7 @@ export const deleteBudget = createAsyncThunk(
   'budgets/delete',
   async ({ id, userId }: { id: string; userId: string }, { rejectWithValue }) => {
     try {
-      // Simulate API delay
+      
       await new Promise(resolve => setTimeout(resolve, 500));
 
       const budgets = getLocalBudgets(userId);
@@ -76,7 +76,7 @@ export const updateBudget = createAsyncThunk(
   'budgets/update',
   async ({ id, userId, data }: { id: string; userId: string; data: Partial<Budget> }, { rejectWithValue }) => {
     try {
-      // Simulate API delay
+      
       await new Promise(resolve => setTimeout(resolve, 500));
 
       const budgets = getLocalBudgets(userId);
@@ -110,7 +110,7 @@ export const budgetSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Fetch
+      
       .addCase(fetchBudgets.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -123,15 +123,15 @@ export const budgetSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload as string;
       })
-      // Add
+      
       .addCase(addBudget.fulfilled, (state, action) => {
         state.budgets.unshift(action.payload);
       })
-      // Delete
+      
       .addCase(deleteBudget.fulfilled, (state, action) => {
         state.budgets = state.budgets.filter((b) => b.id !== action.payload);
       })
-      // Update
+      
       .addCase(updateBudget.fulfilled, (state, action) => {
         const index = state.budgets.findIndex((b) => b.id === action.payload.id);
         if (index !== -1) {

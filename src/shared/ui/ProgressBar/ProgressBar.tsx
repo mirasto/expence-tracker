@@ -3,12 +3,12 @@ import clsx from 'clsx';
 import styles from './ProgressBar.module.scss';
 
 interface ProgressBarProps {
-  percentage: number; // 0 to 100+
+  percentage: number; 
   className?: string;
 }
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({ percentage, className }) => {
-  // Clamp percentage for width, but allow logic to determine color
+  
   const width = Math.min(Math.max(percentage, 0), 100);
 
   let colorClass = styles.success;

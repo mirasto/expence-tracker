@@ -152,7 +152,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 44px; /* Larger touch target */
+  height: 44px; 
   border-radius: 12px;
   font-weight: 600;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -189,7 +189,7 @@
   }
 }
 
-/* Dropdown Styles */
+
 .dropdownContent {
   min-width: 180px;
   background-color: var(--color-surface);

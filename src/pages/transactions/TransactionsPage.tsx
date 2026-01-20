@@ -13,7 +13,7 @@ export const TransactionsPage = () => {
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        {/* Filters will go here */}
+        {}
       </div>
 
       <TransactionList />

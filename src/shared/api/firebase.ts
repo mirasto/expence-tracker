@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
-// Initialize Firestore with long polling to avoid extension blocking (net::ERR_BLOCKED_BY_CLIENT)
+
 export const db = initializeFirestore(app, {
   experimentalForceLongPolling: true,
 });

@@ -6,7 +6,7 @@ export const PrivateRoute = () => {
   const location = useLocation();
 
   if (isLoading) {
-    // You might want to replace this with a proper loading spinner
+    
     return <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>Loading...</div>;
   }
 

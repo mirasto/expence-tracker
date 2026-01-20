@@ -6,7 +6,7 @@ export interface SettingsState {
   isLoading: boolean;
 }
 
-// Load from localStorage
+
 const loadSettings = (): Partial<SettingsState> => {
   try {
     const saved = localStorage.getItem('app_settings');

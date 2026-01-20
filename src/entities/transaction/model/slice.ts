@@ -1,27 +1,27 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { Transaction, TransactionState, TransactionType, TransactionCategory } from './types';
 
-// Helper to get transactions from localStorage
+
 const getLocalTransactions = (userId: string): Transaction[] => {
   const data = localStorage.getItem(`transactions_${userId}`);
   return data ? JSON.parse(data) : [];
 };
 
-// Helper to save transactions to localStorage
+
 const saveLocalTransactions = (userId: string, transactions: Transaction[]) => {
   localStorage.setItem(`transactions_${userId}`, JSON.stringify(transactions));
 };
 
-// Async Thunks
+
 export const fetchTransactions = createAsyncThunk(
   'transactions/fetch',
   async (userId: string, { rejectWithValue }) => {
     try {
-      // Simulate API delay
+      
       await new Promise(resolve => setTimeout(resolve, 500));
       
       const transactions = getLocalTransactions(userId);
-      // Sort by date desc
+      
       return transactions.sort((a, b) => b.date - a.date);
     } catch (error: any) {
       return rejectWithValue(error.message);
@@ -33,7 +33,7 @@ export const addTransaction = createAsyncThunk(
   'transactions/add',
   async (transaction: Omit<Transaction, 'id'>, { rejectWithValue }) => {
     try {
-      // Simulate API delay
+      
       await new Promise(resolve => setTimeout(resolve, 500));
 
       const newTransaction: Transaction = {
@@ -56,7 +56,7 @@ export const deleteTransaction = createAsyncThunk(
   'transactions/delete',
   async ({ id, userId }: { id: string; userId: string }, { rejectWithValue }) => {
     try {
-      // Simulate API delay
+      
       await new Promise(resolve => setTimeout(resolve, 500));
 
       const transactions = getLocalTransactions(userId);
@@ -74,7 +74,7 @@ export const updateTransaction = createAsyncThunk(
   'transactions/update',
   async ({ id, userId, data }: { id: string; userId: string; data: Partial<Transaction> }, { rejectWithValue }) => {
     try {
-      // Simulate API delay
+      
       await new Promise(resolve => setTimeout(resolve, 500));
 
       const transactions = getLocalTransactions(userId);
@@ -125,7 +125,7 @@ export const transactionSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Fetch
+      
       .addCase(fetchTransactions.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -138,15 +138,15 @@ export const transactionSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload as string;
       })
-      // Add
+      
       .addCase(addTransaction.fulfilled, (state, action) => {
         state.transactions.unshift(action.payload);
       })
-      // Delete
+      
       .addCase(deleteTransaction.fulfilled, (state, action) => {
         state.transactions = state.transactions.filter((t) => t.id !== action.payload);
       })
-      // Update
+      
       .addCase(updateTransaction.fulfilled, (state, action) => {
         const index = state.transactions.findIndex((t) => t.id === action.payload.id);
         if (index !== -1) {

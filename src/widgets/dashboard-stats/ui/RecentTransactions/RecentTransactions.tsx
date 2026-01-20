@@ -20,7 +20,7 @@ export const RecentTransactions = ({ transactions, isLoading }: RecentTransactio
   const { t } = useTranslation();
 
   const groupedTransactions = useMemo(() => {
-    // ... logic remains same ...
+    
     const groups: { label: string; items: Transaction[] }[] = [
       { label: t('common.today', 'Today'), items: [] },
       { label: t('common.yesterday', 'Yesterday'), items: [] },
@@ -42,7 +42,7 @@ export const RecentTransactions = ({ transactions, isLoading }: RecentTransactio
   }, [transactions]);
 
   if (isLoading) {
-    // ... skeleton ...
+    
     return (
       <Card className={styles.container}>
         <div className={styles.header}>
@@ -65,7 +65,7 @@ export const RecentTransactions = ({ transactions, isLoading }: RecentTransactio
   }
 
   if (transactions.length === 0) {
-    // ... empty state ...
+    
     return (
       <Card className={styles.container}>
         <div className={styles.empty}>

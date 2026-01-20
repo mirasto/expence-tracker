@@ -48,7 +48,7 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
 
   return (
     <div className={styles.grid}>
-      {/* Total Balance */}
+      {}
       <Card hover glass className={styles.balanceCard}>
         <div className={styles.cardHeader}>
           <div className={styles.iconWrapper}>
@@ -64,7 +64,7 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
         </div>
       </Card>
 
-      {/* Income */}
+      {}
       <Card hover className={styles.incomeCard}>
         <div className={styles.cardHeader}>
           <div className={styles.iconWrapper}>
@@ -84,7 +84,7 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
         </div>
       </Card>
 
-      {/* Expenses */}
+      {}
       <Card hover className={styles.expenseCard}>
         <div className={styles.cardHeader}>
           <div className={styles.iconWrapper}>

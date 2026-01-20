@@ -3,11 +3,11 @@ import { useAppSelector } from '@/app/providers/store/store';
 
 export const useCurrency = () => {
   const { currency } = useAppSelector((state) => state.settings);
-  // TODO: Add exchangeRates to settings state if needed for conversion
+  
   const exchangeRates: Record<string, number> = {};
 
   const format = useCallback((amount: number, fromCurrency: string = 'USD') => {
-    // If target currency matches source, just format
+    
     if (fromCurrency === currency) {
       return new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -15,7 +15,7 @@ export const useCurrency = () => {
       }).format(amount);
     }
 
-    // If we don't have rates, fallback to original
+    
     if (!exchangeRates || Object.keys(exchangeRates).length === 0) {
       return new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -23,17 +23,17 @@ export const useCurrency = () => {
       }).format(amount);
     }
 
-    // Convert
-    // The rates in store are based on the SELECTED currency.
-    // e.g. Selected = EUR. Rates: { USD: 1.1, EUR: 1, ... }
-    // This means 1 EUR = 1.1 USD.
-    // So to convert FROM USD TO EUR: amount / rate(USD)
-    // Example: 10 USD / 1.1 = 9.09 EUR.
+    
+    
+    
+    
+    
+    
     
     const rate = exchangeRates[fromCurrency];
     
     if (!rate) {
-      // Fallback if rate not found
+      
       return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: fromCurrency,

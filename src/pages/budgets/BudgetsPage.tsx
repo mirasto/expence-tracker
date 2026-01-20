@@ -15,7 +15,7 @@ export const BudgetsPage = () => {
   useEffect(() => {
     if (user?.uid) {
       dispatch(fetchBudgets(user.uid));
-      dispatch(fetchTransactions(user.uid)); // Needed for calculating spent amounts
+      dispatch(fetchTransactions(user.uid)); 
     }
   }, [dispatch, user?.uid]);
 

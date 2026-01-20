@@ -21,7 +21,7 @@ export const selectSavingsGoalsWithProgress = createSelector(
         
         if (isAfter(deadlineDate, now)) {
           const monthsLeft = differenceInMonths(deadlineDate, now);
-          // If less than a month, treat as 1 month to avoid division by zero or infinity
+          
           const divisor = Math.max(1, monthsLeft);
           monthlySavingsNeeded = remainingAmount / divisor;
         }

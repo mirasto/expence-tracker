@@ -20,7 +20,7 @@ export const TransactionList = () => {
   }, [dispatch, user?.uid]);
 
   const handleDelete = (id: string) => {
-    // Confirmation removed as requested
+    
     if (user?.uid) {
       dispatch(deleteTransaction({ id, userId: user.uid }));
     }

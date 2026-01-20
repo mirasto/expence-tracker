@@ -3,10 +3,10 @@ import { TransactionCategory } from '@/entities/transaction/model/types';
 export interface Budget {
   id: string;
   userId: string;
-  category: TransactionCategory; // e.g., 'food', 'transport'
-  amount: number;                // The spending limit (e.g., $500)
+  category: TransactionCategory; 
+  amount: number;                
   currency: string;
-  period: 'monthly';             // For now, support monthly budgets
+  period: 'monthly';             
   createdAt: number;
   updatedAt: number;
 }
@@ -17,10 +17,10 @@ export interface BudgetState {
   error: string | null;
 }
 
-// Derived state (calculated on the fly, not stored in DB)
+
 export interface BudgetProgress extends Budget {
-  spent: number;      // Total transaction amount for this category
-  remaining: number;  // amount - spent
-  percentage: number; // (spent / amount) * 100
+  spent: number;      
+  remaining: number;  
+  percentage: number; 
   isOverBudget: boolean;
 }

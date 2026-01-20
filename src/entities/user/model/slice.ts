@@ -3,7 +3,7 @@ import { updateProfile } from 'firebase/auth';
 import { auth } from '@/shared/api/firebase';
 import { User, UserState } from './types';
 
-// Async Thunks
+
 export const updateUserProfile = createAsyncThunk(
   'user/updateProfile',
   async ({ displayName, photoURL }: { displayName?: string; photoURL?: string }, { rejectWithValue }) => {
@@ -14,7 +14,7 @@ export const updateUserProfile = createAsyncThunk(
           photoURL,
         });
         
-        // Return the updated fields
+        
         return { displayName, photoURL };
       }
       throw new Error('No user logged in');
@@ -26,7 +26,7 @@ export const updateUserProfile = createAsyncThunk(
 
 const initialState: UserState = {
   user: null,
-  isLoading: true, // Start loading to check auth state
+  isLoading: true, 
   error: null,
   isInitialized: false,
 };

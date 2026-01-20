@@ -45,8 +45,8 @@ export const EditBudgetModal = ({ isOpen, onClose, budget, isDuplicate = false }
   const onSubmit = async (data: BudgetFormValues) => {
     if (!user || !budget) return;
 
-    // Check if user is trying to change category to one that already exists 
-    // (excluding current IF it's an edit, but including current IF it's a duplicate)
+    
+    
     const exists = budgets.some(b => 
       b.category === data.category && 
       (isDuplicate ? true : b.id !== budget.id)
@@ -62,7 +62,7 @@ export const EditBudgetModal = ({ isOpen, onClose, budget, isDuplicate = false }
 
     try {
       if (isDuplicate) {
-        // Create new budget
+        
         await dispatch(addBudget({
           userId: user.uid,
           amount: Number(data.amount),
@@ -71,7 +71,7 @@ export const EditBudgetModal = ({ isOpen, onClose, budget, isDuplicate = false }
           period: 'monthly',
         })).unwrap();
       } else {
-        // Update existing budget
+        
         await dispatch(updateBudget({
           id: budget.id,
           userId: user.uid,

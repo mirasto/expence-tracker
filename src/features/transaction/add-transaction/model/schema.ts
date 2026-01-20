@@ -8,7 +8,7 @@ export const transactionSchema = z.object({
     'health', 'education', 'housing', 'salary', 'investment', 'other'
   ]),
   description: z.string().min(1, 'Description is required'),
-  date: z.string(), // We'll handle date conversion in the component
+  date: z.string(), 
 });
 
 export type TransactionFormValues = z.infer<typeof transactionSchema>;

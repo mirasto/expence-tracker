@@ -24,7 +24,7 @@ export const BudgetList = () => {
       dispatch(deleteBudget({ id, userId: user.uid }))
         .unwrap()
         .then(() => {
-          // Success notification could be added here
+          
           console.log('Budget deleted successfully');
         })
         .catch((err) => {
@@ -38,11 +38,11 @@ export const BudgetList = () => {
   };
 
   const handleDuplicate = (budget: BudgetProgress) => {
-    // For duplication, we want to create a NEW budget based on this one.
-    // We'll pass a special flag or handle it in the modal.
-    // Let's use a "clean" copy without ID to signify a new entry based on existing data.
-    // However, our EditModal relies on ID for updates. 
-    // Let's update EditBudgetModal to handle "isDuplicate" prop.
+    
+    
+    
+    
+    
     setEditingBudget({ ...budget, id: 'DUPLICATE_FLAG' });
   };
 

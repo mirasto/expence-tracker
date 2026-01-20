@@ -13,7 +13,7 @@ export const SavingsGoalList = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.user);
-  // @ts-ignore - store not updated yet
+  
   const { isLoading, error } = useAppSelector((state) => state.savingsGoals || { isLoading: false, error: null });
   const goals = useAppSelector(selectSavingsGoalsWithProgress);
 
@@ -44,7 +44,7 @@ export const SavingsGoalList = () => {
   };
 
   const handleEdit = (goal: SavingsGoalProgress) => {
-    // TODO: Implement edit
+    
     console.log('Edit', goal);
   };
 

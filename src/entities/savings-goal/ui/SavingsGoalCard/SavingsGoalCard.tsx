@@ -40,7 +40,7 @@ export const SavingsGoalCard: React.FC<SavingsGoalCardProps> = ({
   
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
-  // Format currency
+  
   const formatMoney = (val: number) => {
     return formatCurrency(val, currency);
   };

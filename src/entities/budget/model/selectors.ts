@@ -12,7 +12,7 @@ export const selectBudgetsWithProgress = createSelector(
     const now = new Date();
 
     return budgets.map((budget): BudgetProgress => {
-      // Calculate spent amount for this budget's category in the current month
+      
       const spent = transactions
         .filter((t) => {
           const transactionDate = new Date(t.date);

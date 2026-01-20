@@ -8,7 +8,7 @@ export const ThemeToggle = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();
 
   const handleToggle = () => {
-    // Simple toggle logic: if light -> dark, else -> light (overriding system)
+    
     setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
   };
 

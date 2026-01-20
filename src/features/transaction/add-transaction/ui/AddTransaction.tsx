@@ -46,7 +46,7 @@ export const AddTransaction = () => {
         category: data.category,
         description: data.description,
         date: new Date(data.date).getTime(),
-        currency: 'USD', // Default for now
+        currency: 'USD', 
         createdAt: Date.now(),
       })).unwrap();
       

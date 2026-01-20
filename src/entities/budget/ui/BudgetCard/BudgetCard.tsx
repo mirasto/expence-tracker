@@ -44,7 +44,7 @@ export const BudgetCard: React.FC<BudgetCardProps> = ({
   const { id, category, spent, amount, percentage, remaining, isOverBudget, currency } = budget;
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
-  // Format currency
+  
   const formatMoney = (val: number) => {
     return formatCurrency(val, currency);
   };

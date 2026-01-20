@@ -18,12 +18,12 @@ export default function App() {
         <ThemeProvider>
           <Router>
             <Routes>
-              {/* Public Routes (Restricted for authenticated users) */}
+              {}
               <Route element={<RestrictedRoute />}>
                 <Route path="/auth" element={<AuthPage />} />
               </Route>
 
-              {/* Private Routes (Protected) */}
+              {}
               <Route element={<PrivateRoute />}>
                 <Route element={<MainLayout />}>
                   <Route path="/" element={<DashboardPage />} />
@@ -34,7 +34,7 @@ export default function App() {
                 </Route>
               </Route>
 
-              {/* Catch all redirect */}
+              {}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Router>

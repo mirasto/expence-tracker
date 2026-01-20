@@ -34,7 +34,7 @@ export const AddBudgetModal = () => {
   const onSubmit = async (data: BudgetFormValues) => {
     if (!user) return;
 
-    // Validation: Ensure a user cannot create two budgets for the same category
+    
     const exists = budgets.some(b => b.category === data.category);
     if (exists) {
       setError('category', { 
@@ -49,7 +49,7 @@ export const AddBudgetModal = () => {
         userId: user.uid,
         amount: Number(data.amount),
         category: data.category,
-        currency: 'USD', // Default for now
+        currency: 'USD', 
         period: 'monthly',
       })).unwrap();
       

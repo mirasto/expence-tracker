@@ -11,7 +11,7 @@ export interface Transaction {
   type: TransactionType;
   category: TransactionCategory;
   description: string;
-  date: number; // Timestamp
+  date: number; 
   receiptUrl?: string;
   currency: string;
   createdAt: number;

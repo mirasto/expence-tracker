@@ -11,7 +11,7 @@ interface LoaderProps {
 
 export const Loader: React.FC<LoaderProps> = ({ 
   text = 'Loading...', 
-  timeout = 10000, // 10 seconds default timeout
+  timeout = 10000, 
   size = 40,
   color = 'var(--color-primary)'
 }) => {

@@ -4,7 +4,7 @@ export interface User {
   displayName: string | null;
   photoURL: string | null;
   isAnonymous: boolean;
-  providers: string[]; // e.g., ['google.com', 'password']
+  providers: string[]; 
 }
 
 export interface UserState {
