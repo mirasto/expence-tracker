@@ -42,7 +42,7 @@ The application provides a seamless and intuitive interface for tracking income 
 
 **Dashboard**
 
-![Dashboard](https://i.ibb.co/HfSy2zkc/dashoard-new.png)
+![Dashboard](https://i.ibb.co/7x5Wsxnq/dashboard-new-1-q.png)
 
 
   
