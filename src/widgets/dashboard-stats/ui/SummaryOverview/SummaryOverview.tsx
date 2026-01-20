@@ -72,9 +72,6 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
           </div>
           <TooltipProvider>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <span className={styles.infoIcon}>?</span>
-              </TooltipTrigger>
               <TooltipContent className={styles.tooltip}>
                 <p>Total earnings this month</p>
               </TooltipContent>

@@ -23,7 +23,7 @@ export const ExpenseDoughnut = ({ transactions }: ExpenseDoughnutProps) => {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const { data, totalSpent } = useMemo(() => {
+  const { data, totalSpent, hasHiddenCategories } = useMemo(() => {
     const expenses = transactions.filter(t => t.type === 'expense');
     const total = expenses.reduce((acc, t) => acc + t.amount, 0);
     
@@ -38,13 +38,32 @@ export const ExpenseDoughnut = ({ transactions }: ExpenseDoughnutProps) => {
     }, [] as { name: string; value: number }[]);
 
     const sorted = grouped
-      .sort((a, b) => b.value - a.value)
-      .map(item => ({
-        ...item,
-        percentage: ((item.value / total) * 100).toFixed(1)
-      }));
+      .sort((a, b) => b.value - a.value);
 
-    return { data: sorted, totalSpent: total };
+    // Grouping logic for excessive data points (Requirement 4)
+    // We limit to 5 categories + "Other" to ensure it fits in viewport (Requirement 1)
+    const MAX_VISIBLE_CATEGORIES = 5;
+    let finalData = sorted;
+    let hasHidden = false;
+
+    if (sorted.length > MAX_VISIBLE_CATEGORIES) {
+      const visible = sorted.slice(0, MAX_VISIBLE_CATEGORIES);
+      const hidden = sorted.slice(MAX_VISIBLE_CATEGORIES);
+      const otherValue = hidden.reduce((sum, item) => sum + item.value, 0);
+      
+      finalData = [
+        ...visible,
+        { name: 'other', value: otherValue }
+      ];
+      hasHidden = true;
+    }
+
+    const dataWithPercentage = finalData.map(item => ({
+      ...item,
+      percentage: ((item.value / total) * 100).toFixed(1)
+    }));
+
+    return { data: dataWithPercentage, totalSpent: total, hasHiddenCategories: hasHidden };
   }, [transactions]);
 
   if (data.length === 0) {
@@ -119,7 +138,7 @@ export const ExpenseDoughnut = ({ transactions }: ExpenseDoughnutProps) => {
                   className={styles.legendColor} 
                   style={{ backgroundColor: COLORS[index % COLORS.length] }} 
                 />
-                <span className={styles.legendName}>
+                <span className={styles.legendName} title={t(`transactions.categories.${entry.name}`)}>
                   {t(`transactions.categories.${entry.name}`)}
                 </span>
               </div>
@@ -129,6 +148,12 @@ export const ExpenseDoughnut = ({ transactions }: ExpenseDoughnutProps) => {
               </div>
             </div>
           ))}
+          
+          {hasHiddenCategories && (
+            <div className={styles.limitIndicator}>
+              * {t('dashboard.categoriesGrouped', 'Some categories grouped into "Other"')}
+            </div>
+          )}
         </div>
       </div>
     </Card>

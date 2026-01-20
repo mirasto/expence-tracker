@@ -1,6 +1,6 @@
 .container {
-  height: 100%;
-  min-height: 400px;
+  height: auto;
+  min-height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -8,7 +8,7 @@
 .title {
   font-size: 1.125rem;
   font-weight: 600;
-  margin: 0 0 24px 0;
+  margin: 0 0 16px 0;
   color: var(--color-text);
 }
 
@@ -16,21 +16,25 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   
-  @media (min-width: 768px) {
+  /* Only switch to row layout on tablet where it has full width */
+  @media (min-width: 768px) and (max-width: 1023px) {
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
 }
 
 .chartWrapper {
   position: relative;
-  height: 250px;
+  height: 220px;
   width: 100%;
+  flex-shrink: 0;
   
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     width: 50%;
+    max-width: 250px;
   }
 }
 
@@ -46,12 +50,12 @@
 }
 
 .centerLabelTitle {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: var(--color-text-muted);
 }
 
 .centerLabelAmount {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-text);
 }
@@ -60,31 +64,17 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  overflow-y: auto;
-  max-height: 250px;
-  padding-right: 8px;
-  
-  /* Custom Scrollbar */
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-  
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: 4px;
-  }
+  gap: 8px;
+  padding-right: 0;
+  width: 100%;
+  /* Removed scrolling constraints */
 }
 
 .legendItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: var(--radius-md);
   transition: background-color 0.2s ease;
   cursor: pointer;
@@ -98,25 +88,31 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0; /* Enable text truncation if needed */
 }
 
 .legendColor {
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .legendName {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--color-text);
   text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .legendStats {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .legendPercent {
@@ -124,17 +120,30 @@
   font-weight: 600;
   color: var(--color-text-muted);
   background-color: var(--color-surface);
-  padding: 2px 6px;
+  padding: 2px 4px;
   border-radius: 4px;
   border: 1px solid var(--color-border);
 }
 
 .legendValue {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-text);
-  min-width: 60px;
+  min-width: 50px;
   text-align: right;
+}
+
+.limitIndicator {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  font-style: italic;
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    text-align: left;
+    padding-left: 10px;
+  }
 }
 
 .empty {
@@ -143,4 +152,5 @@
   align-items: center;
   justify-content: center;
   color: var(--color-text-muted);
+  min-height: 200px;
 }

@@ -10,7 +10,11 @@
     "actions": "Actions",
     "confirm": "Confirm",
     "viewDetails": "View Details",
-    "duplicate": "Duplicate"
+    "duplicate": "Duplicate",
+    "search": "Search",
+    "icon": "Icon",
+    "name": "Name",
+    "noResults": "No results found"
   },
   "auth": {
     "login": "Login",
@@ -31,7 +35,8 @@
     "recentTransactions": "Recent Transactions",
     "expensesByCategory": "Expenses by Category",
     "viewAll": "View All",
-    "noData": "No data available"
+    "noData": "No data available",
+    "categoriesGrouped": "Categories consolidated"
   },
   "transactions": {
     "title": "Transactions",
