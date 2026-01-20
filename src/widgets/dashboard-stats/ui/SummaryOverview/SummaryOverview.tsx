@@ -54,9 +54,6 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
           <div className={styles.iconWrapper}>
             <Wallet className={styles.icon} />
           </div>
-          <span className={styles.trendPositive}>
-            <TrendingUp size={16} /> +2.5%
-          </span>
         </div>
         <div className={styles.content}>
           <span className={styles.label}>{t('dashboard.totalBalance')}</span>

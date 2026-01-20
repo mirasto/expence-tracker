@@ -65,7 +65,6 @@
 .displayRow {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
 .value {
@@ -140,21 +139,8 @@
 }
 
 
-.select {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
-  font-size: 14px;
-  outline: none;
-  cursor: pointer;
+.currencySelect {
   min-width: 200px;
-  
-  &:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px var(--color-primary-hover);
-  }
 }
 
 

@@ -92,14 +92,13 @@ export const AddSavingsGoalModal = () => {
                 fullWidth
               />
 
-              <div className={styles.field}>
-                <label>{t('savings.deadline', 'Target Date (Optional)')}</label>
-                <input 
-                  type="date" 
-                  {...register('deadline')} 
-                  className={styles.input}
-                />
-              </div>
+              <Input 
+                label={t('savings.deadline', 'Target Date (Optional)')}
+                type="date" 
+                error={errors.deadline?.message}
+                {...register('deadline')} 
+                fullWidth
+              />
 
               <div className={styles.actions}>
                 <Button type="button" variant="ghost" onClick={() => setIsOpen(false)}>{t('common.cancel')}</Button>

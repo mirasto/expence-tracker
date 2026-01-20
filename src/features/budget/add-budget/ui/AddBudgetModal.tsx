@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store/store';
 import { addBudget } from '@/entities/budget/model/slice';
 import { Button } from '@/shared/ui/Button/Button';
 import { Input } from '@/shared/ui/Input/Input';
+import { Select } from '@/shared/ui/Select/Select';
 import { BudgetFormValues, budgetSchema, CATEGORIES } from '../model/schema';
 import styles from './AddBudgetModal.module.scss';
 import { Plus } from 'lucide-react';
@@ -22,6 +23,7 @@ export const AddBudgetModal = () => {
     handleSubmit,
     reset,
     setError,
+    control,
     formState: { errors, isSubmitting },
   } = useForm<BudgetFormValues>({
     resolver: zodResolver(budgetSchema),
@@ -76,15 +78,23 @@ export const AddBudgetModal = () => {
             </div>
             
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-              <div className={styles.field}>
-                <label>{t('budget.category', 'Category')}</label>
-                <select {...register('category')} className={styles.select}>
-                  {CATEGORIES.map(cat => (
-                    <option key={cat} value={cat}>{t(`categories.${cat}`, cat)}</option>
-                  ))}
-                </select>
-                {errors.category && <span style={{color: 'var(--color-danger)', fontSize: 12}}>{errors.category.message}</span>}
-              </div>
+              <Controller
+                control={control}
+                name="category"
+                render={({ field }) => (
+                  <Select
+                    label={t('budget.category', 'Category')}
+                    options={CATEGORIES.map(cat => ({
+                      value: cat,
+                      label: t(`categories.${cat}`, cat)
+                    }))}
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    error={errors.category?.message}
+                    placeholder={t('settings.categoryNamePlaceholder', 'Select category')}
+                  />
+                )}
+              />
 
               <Input
                 label={t('budget.amount', 'Monthly Limit')}

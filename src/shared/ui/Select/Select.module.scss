@@ -1,0 +1,88 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 16px;
+  line-height: 1;
+  height: 44px; /* Standard input height */
+  gap: 5px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  &:focus-visible {
+    border-color: var(--color-primary);
+  }
+  
+  &[data-placeholder] {
+    color: var(--color-text-muted);
+  }
+}
+
+.content {
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  z-index: 2000;
+  min-width: var(--radix-select-trigger-width);
+}
+
+.viewport {
+  padding: 5px;
+}
+
+.item {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--color-text);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 35px 0 25px;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+
+  &[data-highlighted] {
+    background-color: var(--color-primary);
+    color: #ffffff; /* Always white on primary usually */
+  }
+}
+
+.itemIndicator {
+  position: absolute;
+  left: 5px;
+  width: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}

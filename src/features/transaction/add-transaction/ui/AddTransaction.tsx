@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store/store';
 import { addTransaction } from '@/entities/transaction/model/slice';
 import { Button } from '@/shared/ui/Button/Button';
 import { Input } from '@/shared/ui/Input/Input';
+import { Select } from '@/shared/ui/Select/Select';
 import { TransactionFormValues, transactionSchema } from '../model/schema';
 import styles from './AddTransaction.module.scss';
 import { Plus } from 'lucide-react';
@@ -25,6 +26,7 @@ export const AddTransaction = () => {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors, isSubmitting },
   } = useForm<TransactionFormValues>({
     resolver: zodResolver(transactionSchema),
@@ -73,13 +75,22 @@ export const AddTransaction = () => {
             </div>
             
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-              <div className={styles.field}>
-                <label>{t('transactions.type')}</label>
-                <select {...register('type')} className={styles.select}>
-                  <option value="expense">{t('transactions.expense')}</option>
-                  <option value="income">{t('transactions.income')}</option>
-                </select>
-              </div>
+              <Controller
+                control={control}
+                name="type"
+                render={({ field }) => (
+                  <Select
+                    label={t('transactions.type')}
+                    options={[
+                      { value: 'expense', label: t('transactions.expense') },
+                      { value: 'income', label: t('transactions.income') }
+                    ]}
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    error={errors.type?.message}
+                  />
+                )}
+              />
 
               <Input
                 label={t('transactions.amount')}
@@ -91,14 +102,23 @@ export const AddTransaction = () => {
                 fullWidth
               />
 
-              <div className={styles.field}>
-                <label>{t('transactions.category')}</label>
-                <select {...register('category')} className={styles.select}>
-                  {CATEGORIES.map(cat => (
-                    <option key={cat} value={cat}>{t(`transactions.categories.${cat}`)}</option>
-                  ))}
-                </select>
-              </div>
+              <Controller
+                control={control}
+                name="category"
+                render={({ field }) => (
+                  <Select
+                    label={t('transactions.category')}
+                    options={CATEGORIES.map(cat => ({
+                      value: cat,
+                      label: t(`transactions.categories.${cat}`)
+                    }))}
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    error={errors.category?.message}
+                    placeholder={t('settings.categoryNamePlaceholder', 'Select category')}
+                  />
+                )}
+              />
 
               <Input
                 label={t('transactions.description')}

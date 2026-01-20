@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store/store';
 import { setCurrency } from '@/entities/settings/model/slice';
 import styles from './Settings.module.scss';
-import * as Select from '@radix-ui/react-select';
-import { ChevronDown, Check } from 'lucide-react';
+import { Select } from '@/shared/ui/Select/Select';
 
 export const FinancialSettings = () => {
   const { t } = useTranslation();
@@ -32,15 +31,12 @@ export const FinancialSettings = () => {
         </div>
         
         <div className={styles.settingControl}>
-          <select 
-            className={styles.select}
+          <Select
+            options={CURRENCIES}
             value={currency}
-            onChange={(e) => dispatch(setCurrency(e.target.value))}
-          >
-            {CURRENCIES.map(c => (
-              <option key={c.value} value={c.value}>{c.label}</option>
-            ))}
-          </select>
+            onValueChange={(value) => dispatch(setCurrency(value))}
+            className={styles.currencySelect}
+          />
         </div>
       </div>
     </div>

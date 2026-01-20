@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MoreHorizontal, ShoppingBag, Utensils, Car, Zap, Coffee, Heart, GraduationCap, Home, Briefcase, TrendingUp, HelpCircle, Edit2, Copy, Trash2, Eye } from 'lucide-react';
+import { MoreHorizontal, ShoppingBag, Utensils, Car, Zap, Coffee, Heart, GraduationCap, Home, Briefcase, TrendingUp, HelpCircle, Edit2, Copy, Trash2 } from 'lucide-react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { ProgressBar } from '@/shared/ui/ProgressBar/ProgressBar';
 import { ConfirmDialog } from '@/shared/ui/ConfirmDialog/ConfirmDialog';
@@ -14,7 +14,6 @@ interface BudgetCardProps {
   onEdit?: (budget: BudgetProgress) => void;
   onDelete?: (id: string) => void;
   onDuplicate?: (budget: BudgetProgress) => void;
-  onViewDetails?: (budget: BudgetProgress) => void;
 }
 
 const getCategoryIcon = (category: TransactionCategory) => {
@@ -37,8 +36,7 @@ export const BudgetCard: React.FC<BudgetCardProps> = ({
   budget, 
   onEdit, 
   onDelete, 
-  onDuplicate,
-  onViewDetails
+  onDuplicate
 }) => {
   const { t } = useTranslation();
   const { id, category, spent, amount, percentage, remaining, isOverBudget, currency } = budget;
@@ -76,10 +74,6 @@ export const BudgetCard: React.FC<BudgetCardProps> = ({
 
             <DropdownMenu.Portal>
               <DropdownMenu.Content className={styles.dropdownContent} sideOffset={5} align="end">
-                <DropdownMenu.Item className={styles.dropdownItem} onSelect={() => onViewDetails?.(budget)}>
-                  <Eye size={16} />
-                  {t('common.viewDetails')}
-                </DropdownMenu.Item>
                 <DropdownMenu.Item className={styles.dropdownItem} onSelect={() => onEdit?.(budget)}>
                   <Edit2 size={16} />
                   {t('common.edit')}

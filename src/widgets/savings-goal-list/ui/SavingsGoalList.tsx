@@ -7,6 +7,7 @@ import { SavingsGoalCard } from '@/entities/savings-goal/ui/SavingsGoalCard/Savi
 import { SavingsGoalProgress } from '@/entities/savings-goal/model/types';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { DepositWithdrawModal } from '@/features/savings-goal/manage-savings/ui/DepositWithdrawModal';
+import { EditSavingsGoalModal } from '@/features/savings-goal/edit-savings-goal/ui/EditSavingsGoalModal';
 import styles from './SavingsGoalList.module.scss';
 
 export const SavingsGoalList = () => {
@@ -27,6 +28,14 @@ export const SavingsGoalList = () => {
     goal: null,
   });
 
+  const [editModal, setEditModal] = useState<{
+    isOpen: boolean;
+    goal: SavingsGoalProgress | null;
+  }>({
+    isOpen: false,
+    goal: null,
+  });
+
   useEffect(() => {
     if (user?.uid) {
       dispatch(fetchSavingsGoals(user.uid));
@@ -44,8 +53,10 @@ export const SavingsGoalList = () => {
   };
 
   const handleEdit = (goal: SavingsGoalProgress) => {
-    
-    console.log('Edit', goal);
+    setEditModal({
+      isOpen: true,
+      goal,
+    });
   };
 
   const handleDeposit = (goal: SavingsGoalProgress) => {
@@ -107,6 +118,14 @@ export const SavingsGoalList = () => {
           onClose={() => setTransactionModal(prev => ({ ...prev, isOpen: false }))}
           type={transactionModal.type}
           goal={transactionModal.goal}
+        />
+      )}
+
+      {editModal.goal && (
+        <EditSavingsGoalModal
+          isOpen={editModal.isOpen}
+          onClose={() => setEditModal(prev => ({ ...prev, isOpen: false }))}
+          goal={editModal.goal}
         />
       )}
     </>
