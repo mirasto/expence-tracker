@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { LanguageSwitcher } from '@/features/language/ui/LanguageSwitcher';

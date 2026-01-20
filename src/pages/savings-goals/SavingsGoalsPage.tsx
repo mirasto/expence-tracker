@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { SavingsGoalList } from '@/widgets/savings-goal-list/ui/SavingsGoalList';
 import { AddSavingsGoalModal } from '@/features/savings-goal/add-savings-goal/ui/AddSavingsGoalModal';

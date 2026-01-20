@@ -79,7 +79,7 @@ export const DepositWithdrawModal = ({ isOpen, onClose, type, goal }: DepositWit
     : t('savings.withdrawFrom', 'Withdraw from {{name}}', { name: goal.name });
 
   const btnLabel = type === 'deposit' ? t('savings.deposit') : t('savings.withdraw');
-  const btnVariant = type === 'deposit' ? 'primary' : 'danger'; 
+  
 
   return (
     <div className={styles.overlay}>

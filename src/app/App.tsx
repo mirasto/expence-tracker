@@ -7,7 +7,7 @@ import { PrivateRoute, RestrictedRoute } from "./providers/router/Guards";
 import { MainLayout } from "@/widgets/layout/ui/MainLayout";
 import { Loader } from "@/shared/ui/Loader/Loader";
 
-// Lazy load pages with named export handling
+
 const AuthPage = lazy(() => import("@/pages/auth/AuthPage").then(module => ({ default: module.AuthPage })));
 const DashboardPage = lazy(() => import("@/pages/dashboard/DashboardPage").then(module => ({ default: module.DashboardPage })));
 const TransactionsPage = lazy(() => import("@/pages/transactions/TransactionsPage").then(module => ({ default: module.TransactionsPage })));
@@ -23,12 +23,12 @@ export default function App() {
           <Router>
             <Suspense fallback={<Loader />}>
               <Routes>
-                {/* Public Routes */}
+          
                 <Route element={<RestrictedRoute />}>
                   <Route path="/auth" element={<AuthPage />} />
                 </Route>
 
-                {/* Private Routes */}
+             
                 <Route element={<PrivateRoute />}>
                   <Route element={<MainLayout />}>
                     <Route path="/" element={<DashboardPage />} />
@@ -39,7 +39,6 @@ export default function App() {
                   </Route>
                 </Route>
 
-                {/* Catch all */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>

@@ -78,7 +78,7 @@
   }
   
   &.expense {
-    color: #FF0000;
+    color: var(--color-danger);
   }
 }
 

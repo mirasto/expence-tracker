@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store/store';
 import { setCurrency } from '@/entities/settings/model/slice';

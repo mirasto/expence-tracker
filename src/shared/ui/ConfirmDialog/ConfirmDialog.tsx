@@ -1,4 +1,4 @@
-import React from 'react';
+
 import * as Dialog from '@radix-ui/react-dialog';
 import styles from './ConfirmDialog.module.scss';
 import { Button } from '@/shared/ui/Button/Button';

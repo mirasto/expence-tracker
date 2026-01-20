@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { User, Palette } from 'lucide-react';
 import { ProfileSettings } from '@/widgets/settings/ui/ProfileSettings';

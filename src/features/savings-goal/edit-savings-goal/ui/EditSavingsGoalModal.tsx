@@ -90,9 +90,6 @@ export const EditSavingsGoalModal = ({ isOpen, onClose, goal }: EditSavingsGoalM
             fullWidth
           />
 
-          {/* Current amount editing might be restricted or allowed. 
-              Usually "Edit" allows changing initial params, but current amount 
-              is often managed by transactions. However, Add modal has it, so let's allow it. */}
           <Input
             label={t('savings.currentAmount', 'Current Amount')}
             type="number"

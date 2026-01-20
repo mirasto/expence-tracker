@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store/store';
 import { updateUserProfile } from '@/entities/user/model/slice';

@@ -46,12 +46,11 @@ export const AddTransaction = () => {
   const onSubmit = async (data: TransactionFormValues) => {
     if (!user) return;
 
-    // Robust Date Handling: Create Local Noon timestamp
-    // This prevents "previous day" display issues caused by midnight timezone shifts
+
     const [year, month, day] = data.date.split('-').map(Number);
     const transactionDate = new Date(year, month - 1, day, 12, 0, 0, 0);
 
-    // Validate that the parsed date matches the selection
+
     if (
       transactionDate.getFullYear() !== year ||
       transactionDate.getMonth() !== month - 1 ||
