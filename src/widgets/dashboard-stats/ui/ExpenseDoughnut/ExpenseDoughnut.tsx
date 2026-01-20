@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useCurrency } from '@/shared/lib/hooks/useCurrency';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Transaction } from '@/entities/transaction/model/types';
 import { Card } from '@/shared/ui/Card/Card';
@@ -21,6 +22,7 @@ const COLORS = [
 
 export const ExpenseDoughnut = ({ transactions }: ExpenseDoughnutProps) => {
   const { t } = useTranslation();
+  const { format } = useCurrency();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const { data, totalSpent, hasHiddenCategories } = useMemo(() => {

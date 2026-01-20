@@ -2,7 +2,9 @@ import { useCallback } from 'react';
 import { useAppSelector } from '@/app/providers/store/store';
 
 export const useCurrency = () => {
-  const { currency, exchangeRates } = useAppSelector((state) => state.settings);
+  const { currency } = useAppSelector((state) => state.settings);
+  // TODO: Add exchangeRates to settings state if needed for conversion
+  const exchangeRates: Record<string, number> = {};
 
   const format = useCallback((amount: number, fromCurrency: string = 'USD') => {
     // If target currency matches source, just format
