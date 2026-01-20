@@ -32,7 +32,9 @@ export const TransactionItem = ({
       </div>
       
       <div className={styles.details}>
-        <div className={styles.description}>{transaction.description}</div>
+        <div className={styles.description}>
+          {transaction.description}
+        </div>
         <div className={styles.meta}>
           {variant === 'default' && (
             <span>{new Date(transaction.date).toLocaleDateString()} • </span>

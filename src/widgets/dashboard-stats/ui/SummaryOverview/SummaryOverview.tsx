@@ -17,20 +17,29 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
   const { t } = useTranslation();
 
   const stats = useMemo(() => {
-    const income = transactions
-      .filter(t => t.type === 'income')
-      .reduce((acc, t) => acc + t.amount, 0);
+    // 1. Separate transactions by type
+    const incomeTransactions = transactions.filter(t => t.type === 'income');
+    const expenseTransactions = transactions.filter(t => t.type === 'expense');
 
-    const expenses = transactions
-      .filter(t => t.type === 'expense')
-      .reduce((acc, t) => acc + t.amount, 0);
+    // 2. Calculate totals
+    const totalIncome = incomeTransactions.reduce((acc, t) => acc + Number(t.amount), 0);
+    const totalExpenses = expenseTransactions.reduce((acc, t) => acc + Number(t.amount), 0);
+
+    // 3. Calculate balance (Income - Expenses)
+    // Note: Assuming initial balance is 0 for this overview, or derived from transactions
+    const currentBalance = totalIncome - totalExpenses;
 
     return {
-      balance: income - expenses,
-      income,
-      expenses
+      balance: currentBalance,
+      income: totalIncome,
+      expenses: totalExpenses
     };
   }, [transactions]);
+
+  // Helper for consistent currency formatting
+  const formatMoney = (amount: number, prefix: string = '') => {
+    return `${prefix}${formatCurrency(Math.abs(amount))}`;
+  };
 
   if (isLoading) {
     return (
@@ -57,11 +66,13 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
         </div>
         <div className={styles.content}>
           <span className={styles.label}>{t('dashboard.totalBalance')}</span>
-          <h2 className={styles.amount}>${stats.balance.toFixed(2)}</h2>
+          <h2 className={styles.amount}>
+            {stats.balance < 0 ? '-' : ''}{formatMoney(stats.balance)}
+          </h2>
         </div>
       </Card>
 
-      {}
+      {/* Income Card */}
       <Card hover className={styles.incomeCard}>
         <div className={styles.cardHeader}>
           <div className={styles.iconWrapper}>
@@ -77,11 +88,13 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
         </div>
         <div className={styles.content}>
           <span className={styles.label}>{t('dashboard.totalIncome')}</span>
-          <h2 className={styles.amount}>+${stats.income.toFixed(2)}</h2>
+          <h2 className={styles.amount}>
+            {formatMoney(stats.income, '+')}
+          </h2>
         </div>
       </Card>
 
-      {}
+      {/* Expenses Card */}
       <Card hover className={styles.expenseCard}>
         <div className={styles.cardHeader}>
           <div className={styles.iconWrapper}>
@@ -90,7 +103,9 @@ export const SummaryOverview = ({ transactions, isLoading }: SummaryOverviewProp
         </div>
         <div className={styles.content}>
           <span className={styles.label}>{t('dashboard.totalExpenses')}</span>
-          <h2 className={styles.amount}>-{formatCurrency(stats.expenses)}</h2>
+          <h2 className={styles.amount}>
+            {formatMoney(stats.expenses, '-')}
+          </h2>
         </div>
       </Card>
     </div>
