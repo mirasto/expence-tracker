@@ -32,13 +32,34 @@ export const AddTransaction = () => {
     resolver: zodResolver(transactionSchema),
     defaultValues: {
       type: 'expense',
-      date: new Date().toISOString().split('T')[0],
+      date: (() => {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      })(),
       category: 'other',
     },
   });
 
   const onSubmit = async (data: TransactionFormValues) => {
     if (!user) return;
+
+    // Robust Date Handling: Create Local Noon timestamp
+    // This prevents "previous day" display issues caused by midnight timezone shifts
+    const [year, month, day] = data.date.split('-').map(Number);
+    const transactionDate = new Date(year, month - 1, day, 12, 0, 0, 0);
+
+    // Validate that the parsed date matches the selection
+    if (
+      transactionDate.getFullYear() !== year ||
+      transactionDate.getMonth() !== month - 1 ||
+      transactionDate.getDate() !== day
+    ) {
+      console.error('Date validation failed: Selected date does not match generated timestamp');
+      return;
+    }
 
     try {
       await dispatch(addTransaction({
@@ -47,7 +68,7 @@ export const AddTransaction = () => {
         type: data.type,
         category: data.category,
         description: data.description,
-        date: new Date(data.date).getTime(),
+        date: transactionDate.getTime(),
         currency: 'USD', 
         createdAt: Date.now(),
       })).unwrap();
