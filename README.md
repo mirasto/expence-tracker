@@ -139,16 +139,6 @@ src/
 
   
 
-### Useful Links
-
-*   [Feature-Sliced Design Documentation](https://feature-sliced.design/)
-
-*   [Firebase Documentation](https://firebase.google.com/docs)
-
-*   [React 19 Documentation](https://react.dev/blog/2024/04/25/react-19)
-
-  
-
 ---
 
 ### 📸 Screenshots
