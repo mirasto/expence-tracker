@@ -3,7 +3,7 @@ import { Globe } from 'lucide-react';
 import { Button } from '@/shared/ui/Button/Button';
 
 export const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'uk' : 'en';
@@ -14,7 +14,7 @@ export const LanguageSwitcher = () => {
     <Button 
       variant="ghost" 
       size="sm" 
-      aria-label="Switch language"
+      aria-label={t('common.switchLanguage', 'Switch language')}
       onClick={toggleLanguage}
     >
       <Globe size={20} />

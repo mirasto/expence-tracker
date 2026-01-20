@@ -3,7 +3,7 @@
 A modern, feature-rich personal finance management application built with **React 19**, **TypeScript**, and **Feature-Sliced Design (FSD)**.
 This application helps users track income and expenses, manage budgets, and achieve savings goals through an intuitive and responsive interface.
 
-![Dashboard](https://i.ibb.co/YFxzGhq5/dashard-1.png)
+![Dashboard](https://i.ibb.co/HfSy2zkc/dashoard-new.png)
 
 ---
 

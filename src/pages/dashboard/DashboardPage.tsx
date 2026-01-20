@@ -26,7 +26,7 @@ export const DashboardPage = () => {
         <h1 className={styles.greeting}>
           {t('dashboard.welcome', { name: user?.displayName || 'User' })}
         </h1>
-        <p className={styles.subtitle}>Here's what's happening with your finances today.</p>
+        <p className={styles.subtitle}>{t('dashboard.subtitle', "Here's what's happening with your finances today.")}</p>
       </header>
 
       <SummaryOverview transactions={transactions} isLoading={isLoading} />

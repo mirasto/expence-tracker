@@ -63,7 +63,7 @@ export const ProfileSettings = () => {
             </div>
           ) : (
             <div className={styles.displayRow}>
-              <span className={styles.value}>{user.displayName || 'Not set'}</span>
+              <span className={styles.value}>{user.displayName || ''}</span>
               <Button size="sm" variant="outline" onClick={() => setIsEditing(true)}>
                 {t('common.edit')}
               </Button>
@@ -90,7 +90,7 @@ export const ProfileSettings = () => {
           {(!user.providers || user.providers.length === 0) && (
              <div className={styles.providerBadge}>
                <Mail size={16} />
-               <span>Guest / Email</span>
+               <span>{t('settings.guestEmailLabel', 'Guest / Email')}</span>
              </div>
           )}
         </div>

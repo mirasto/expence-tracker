@@ -53,8 +53,8 @@ export const AuthPage = () => {
       
       <div className={styles.visualSide}>
         <div className={styles.visualContent}>
-          <h2>Smart Financial Management</h2>
-          <p>Visualize your income and expenses in one place.</p>
+          <h2>{t('auth.taglineTitle', 'Smart Financial Management')}</h2>
+          <p>{t('auth.taglineDesc', 'Visualize your income and expenses in one place.')}</p>
         </div>
       </div>
     </div>

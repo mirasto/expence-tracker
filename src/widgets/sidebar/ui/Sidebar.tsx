@@ -32,7 +32,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
       <div className={clsx(styles.overlay, isOpen && styles.open)} onClick={onClose} />
       <aside className={clsx(styles.sidebar, isOpen && styles.open)}>
         <div className={styles.logo}>
-          ExpenseTracker
+          {t('auth.appName', 'ExpenseTracker')}
         </div>
 
         <nav className={styles.nav}>

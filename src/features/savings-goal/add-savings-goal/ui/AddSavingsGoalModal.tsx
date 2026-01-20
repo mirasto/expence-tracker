@@ -68,7 +68,7 @@ export const AddSavingsGoalModal = () => {
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
               <Input
                 label={t('savings.name', 'Goal Name')}
-                placeholder="e.g. Vacation"
+                placeholder={t('savings.goalNamePlaceholder', 'e.g. Vacation')}
                 error={errors.name?.message}
                 {...register('name')}
                 fullWidth

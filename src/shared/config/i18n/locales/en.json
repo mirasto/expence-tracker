@@ -14,9 +14,19 @@
     "search": "Search",
     "icon": "Icon",
     "name": "Name",
-    "noResults": "No results found"
+    "noResults": "No results found",
+    "total": "Total",
+    "switchLanguage": "Switch language",
+    "toggleTheme": "Toggle theme",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "earlier": "Earlier"
   },
   "auth": {
+    "appName": "Expense Tracker",
+    "taglineTitle": "Smart Financial Management",
+    "taglineDesc": "Visualize your income and expenses in one place.",
+    "or": "Or",
     "login": "Login",
     "register": "Register",
     "email": "Email",
@@ -29,6 +39,9 @@
   },
   "dashboard": {
     "welcome": "Welcome back, {{name}}!",
+    "subtitle": "Here's what's happening with your finances today.",
+    "financialTrend": "Financial Trend",
+    "totalEarningsTooltip": "Total earnings this month",
     "totalBalance": "Total Balance",
     "totalIncome": "Total Income",
     "totalExpenses": "Total Expenses",
@@ -131,14 +144,9 @@
     "languageDesc": "Select your preferred language",
     "currency": "Base Currency",
     "currencyDesc": "Primary currency for your transactions",
-    "startDay": "Monthly Start Date",
-    "startDayDesc": "Day of the month when your budget cycle resets",
-    "categories": "Custom Categories",
-    "categoriesDesc": "Manage your custom expense categories",
-    "noCustomCategories": "No custom categories added",
-    "addCategory": "Add Category",
-    "newCategory": "New Category",
-    "color": "Color"
+    "enterNamePlaceholder": "Enter your name",
+    "guestEmailLabel": "Guest / Email",
+    "categoryNamePlaceholder": "Category Name"
   },
   "sidebar": {
     "dashboard": "Dashboard",

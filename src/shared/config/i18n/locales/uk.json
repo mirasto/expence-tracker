@@ -10,7 +10,12 @@
     "actions": "Дії",
     "confirm": "Підтвердити",
     "viewDetails": "Переглянути деталі",
-    "duplicate": "Дублювати"
+    "duplicate": "Дублювати",
+    "switchLanguage": "Змінити мову",
+    "toggleTheme": "Змінити тему",
+    "today": "Сьогодні",
+    "yesterday": "Вчора",
+    "earlier": "Раніше"
   },
   "auth": {
     "login": "Увійти",
@@ -25,6 +30,9 @@
   },
   "dashboard": {
     "welcome": "З поверненням, {{name}}!",
+    "subtitle": "Ось стан ваших фінансів на сьогодні.",
+    "financialTrend": "Фінансовий тренд",
+    "totalEarningsTooltip": "Загальний дохід за цей місяць",
     "totalBalance": "Загальний баланс",
     "totalIncome": "Загальний дохід",
     "totalExpenses": "Загальні витрати",
@@ -36,6 +44,8 @@
   "transactions": {
     "title": "Транзакції",
     "addTransaction": "Додати транзакцію",
+    "noTransactionsTitle": "Транзакцій ще немає",
+    "noTransactionsDesc": "Додайте свою першу транзакцію, щоб почати відстежувати витрати.",
     "noTransactions": "Транзакцій не знайдено. Почніть, додавши одну!",
     "confirmDelete": "Ви впевнені, що хочете видалити цю транзакцію?",
     "type": "Тип",
@@ -89,6 +99,47 @@
     "errors": {
       "categoryExists": "Бюджет для цієї категорії вже існує"
     }
+  },
+  "savings": {
+    "title": "Цілі заощаджень",
+    "subtitle": "Відстежуйте свої заощадження та досягайте цілей",
+    "createGoal": "Створити ціль",
+    "name": "Назва цілі",
+    "targetAmount": "Цільова сума",
+    "currentAmount": "Поточна сума",
+    "deadline": "Дата завершення",
+    "completed": "Ціль досягнуто!",
+    "remaining": "Залишилось {{amount}}",
+    "monthlyNeeded": "Потрібно {{amount}}/міс",
+    "deposit": "Поповнити",
+    "withdraw": "Зняти",
+    "empty": "Цілей заощаджень ще немає. Створіть одну, щоб почати заощаджувати!",
+    "deleteTitle": "Видалити ціль заощаджень?",
+    "deleteDesc": "Ви впевнені, що хочете видалити \"{{name}}\"? Цю дію неможливо скасувати.",
+    "goalNamePlaceholder": "напр. Відпустка"
+  },
+  "settings": {
+    "title": "Налаштування",
+    "subtitle": "Керуйте своїми налаштуваннями та акаунтом",
+    "profile": "Профіль користувача",
+    "financial": "Фінансові налаштування",
+    "appearance": "Інтерфейс та вигляд",
+    "displayName": "Ім'я відображення",
+    "displayNameDesc": "Використовується у вітальних повідомленнях та листах",
+    "linkedAccounts": "Прив'язані акаунти",
+    "linkedAccountsDesc": "Провайдери для входу",
+    "theme": "Тема",
+    "themeDesc": "Виберіть бажану візуальну тему",
+    "light": "Світла",
+    "dark": "Темна",
+    "system": "Системна",
+    "language": "Мова",
+    "languageDesc": "Виберіть бажану мову",
+    "currency": "Основна валюта",
+    "currencyDesc": "Основна валюта для ваших транзакцій",
+    "enterNamePlaceholder": "Введіть своє ім'я",
+    "guestEmailLabel": "Гість / Email",
+    "categoryNamePlaceholder": "Назва категорії"
   },
   "sidebar": {
     "dashboard": "Дашборд",

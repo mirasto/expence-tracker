@@ -120,8 +120,8 @@ export const ExpenseDoughnut = ({ transactions }: ExpenseDoughnutProps) => {
           </ResponsiveContainer>
           
           <div className={styles.centerLabel}>
-            <span className={styles.centerLabelTitle}>Total</span>
-            <span className={styles.centerLabelAmount}>${totalSpent.toFixed(0)}</span>
+            <span className={styles.centerLabelTitle}>{t('common.total', 'Total')}</span>
+            <span className={styles.centerLabelAmount}>{format(totalSpent)}</span>
           </div>
         </div>
 

@@ -22,9 +22,9 @@ export const RecentTransactions = ({ transactions, isLoading }: RecentTransactio
   const groupedTransactions = useMemo(() => {
     // ... logic remains same ...
     const groups: { label: string; items: Transaction[] }[] = [
-      { label: 'Today', items: [] },
-      { label: 'Yesterday', items: [] },
-      { label: 'Earlier', items: [] },
+      { label: t('common.today', 'Today'), items: [] },
+      { label: t('common.yesterday', 'Yesterday'), items: [] },
+      { label: t('common.earlier', 'Earlier'), items: [] },
     ];
 
     transactions.slice(0, 10).forEach((t) => {
@@ -72,8 +72,8 @@ export const RecentTransactions = ({ transactions, isLoading }: RecentTransactio
           <div className={styles.emptyIcon}>
             <Receipt size={32} />
           </div>
-          <h3>No transactions yet</h3>
-          <p>Add your first transaction to start tracking your expenses.</p>
+          <h3>{t('transactions.noTransactionsTitle', 'No transactions yet')}</h3>
+          <p>{t('transactions.noTransactionsDesc', 'Add your first transaction to start tracking your expenses.')}</p>
           <Link to="/transactions">
             <Button>{t('transactions.addTransaction')}</Button>
           </Link>
