@@ -7,6 +7,7 @@ import { auth } from '@/shared/api/firebase';
 import { Button } from '@/shared/ui/Button/Button';
 import { Input } from '@/shared/ui/Input/Input';
 import { LoginFormValues, loginSchema } from '../model/schema';
+import { getAuthErrorMessageKey } from '@/shared/lib/authErrors';
 import styles from './styles.module.scss';
 
 export const LoginForm = () => {
@@ -28,7 +29,8 @@ export const LoginForm = () => {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
     } catch (err: any) {
-      setError(err.message || t('common.error'));
+      const errorKey = getAuthErrorMessageKey(err.code);
+      setError(t(errorKey));
     } finally {
       setIsLoading(false);
     }

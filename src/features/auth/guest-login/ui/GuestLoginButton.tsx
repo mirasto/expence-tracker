@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { signInAnonymously } from 'firebase/auth';
 import { auth } from '@/shared/api/firebase';
 import { Button } from '@/shared/ui/Button/Button';
+import { getAuthErrorMessageKey } from '@/shared/lib/authErrors';
 
 export const GuestLoginButton = () => {
   const { t } = useTranslation();
@@ -16,7 +17,8 @@ export const GuestLoginButton = () => {
       await signInAnonymously(auth);
     } catch (err: any) {
       console.error(err);
-      setError(t('common.error'));
+      const errorKey = getAuthErrorMessageKey(err.code);
+      setError(t(errorKey));
     } finally {
       setIsLoading(false);
     }

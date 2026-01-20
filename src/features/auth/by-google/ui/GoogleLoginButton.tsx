@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '@/shared/api/firebase';
 import { Button } from '@/shared/ui/Button/Button';
+import { getAuthErrorMessageKey } from '@/shared/lib/authErrors';
 
 export const GoogleLoginButton = () => {
   const { t } = useTranslation();
@@ -17,7 +18,8 @@ export const GoogleLoginButton = () => {
       await signInWithPopup(auth, provider);
     } catch (err: any) {
       console.error(err);
-      setError(t('common.error'));
+      const errorKey = getAuthErrorMessageKey(err.code);
+      setError(t(errorKey));
     } finally {
       setIsLoading(false);
     }

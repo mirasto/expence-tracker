@@ -35,7 +35,12 @@
     "guestLogin": "Continue as Guest",
     "googleLogin": "Continue with Google",
     "welcome": "Welcome Back",
-    "createAccount": "Create Account"
+    "createAccount": "Create Account",
+    "errors": {
+      "invalidCredential": "The email or password you entered is incorrect. Please check your credentials and try again.",
+      "emailAlreadyInUse": "This email is already associated with an account. Please sign in or use a different email.",
+      "default": "An unexpected error occurred. Please try again later."
+    }
   },
   "dashboard": {
     "welcome": "Welcome back, {{name}}!",
