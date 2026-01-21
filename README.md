@@ -1,279 +1,125 @@
-# 💰 Expense Tracker
+# Expense Tracker
 
-![React](https://img.shields.io/badge/react-%5E19.0.0-61DAFB?logo=react) ![TypeScript](https://img.shields.io/badge/typescript-%5E5.0-3178C6?logo=typescript)
 
-## 📖 Project Overview
+![Vite](https://img.shields.io/badge/vite-%5E5.0-646CFF?logo=vite) ![React](https://img.shields.io/badge/react-%5E19.0.0-61DAFB?logo=react) ![TypeScript](https://img.shields.io/badge/typescript-%5E5.0-3178C6?logo=typescript) ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-6441AA?logo=redux&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%5E10.0.0-FFCA28?logo=firebase)
 
-  
+
+![Dashboard](https://i.ibb.co/WN6Nbysf/Expence-dashboard.png)
+
+## 1. Project Overview
 
 **Expense Tracker** is a modern, feature-rich personal finance management application designed to help users take control of their financial health. Built with performance and scalability in mind, it utilizes **React 19**, **TypeScript**, and follows the **Feature-Sliced Design (FSD)** architecture.
 
-  
-
 The application provides a seamless and intuitive interface for tracking income and expenses, setting monthly budgets, and managing long-term savings goals. With real-time analytics and multi-language support, it caters to a diverse range of users looking to optimize their spending habits.
+### Key Features
 
-  
+*   **Dashboard Overview**: Real-time summary of financial health with interactive charts (Monthly Trends, Expense Distribution).
+*   **Transaction Management**: Easily record, edit, and categorize income and expenses.
+*   **Smart Budgeting**: Set monthly spending limits per category to prevent overspending.
+*   **Savings Goals**: Create financial targets and track progress with deposit/withdrawal functionality.
+*   **Visual Analytics**: Comprehensive data visualization using Recharts for clear financial insights.
+*   **Multi-language Support**: Fully localized interface (English & Ukrainian) powered by i18next.
+*   **Theme Customization**: Native support for Dark and Light modes with system preference detection.
+*   **Secure Authentication**: Robust user management via Firebase (Email/Password, Google Auth, Guest Access).
+*   **Responsive Design**: Fully optimized experience across desktop, tablet, and mobile devices.
 
-### ✨ Key Features
+## Development Information
 
-  
+### Architecture
 
-*   **📊 Dashboard Overview**: Real-time summary of financial health with interactive charts (Monthly Trends, Expense Distribution).
+This project follows the **[Feature-Sliced Design (FSD)](https://feature-sliced.design/)** methodology to ensure maintainability and scalability.
 
-*   **💸 Transaction Management**: Easily record, edit, and categorize income and expenses.
+*   **`app/`**: Global app setup (providers, styles, routing).
+*   **`pages/`**: Composition layer for constructing full pages.
+*   **`widgets/`**: Compositional units that combine entities and features (e.g., Header, Sidebar).
+*   **`features/`**: User interactions (e.g., Auth, AddTransaction).
+*   **`entities/`**: Business entities (e.g., Transaction, User, Budget).
+*   **`shared/`**: Reusable infrastructure code (UI kit, api, libs).
+### Tech Stack
+*   **Core**: React 19, TypeScript, Vite
+*   **State**: Redux Toolkit, React-Redux
+*   **Styling**: SCSS Modules, clsx
+*   **Backend**: Firebase (Auth, Firestore)
+*   **Testing**: Vitest, React Testing Library
+*   **Validation**: Zod, React Hook Form
 
-*   **📉 Smart Budgeting**: Set monthly spending limits per category to prevent overspending.
+### Basic Usage
 
-*   **🎯 Savings Goals**: Create financial targets and track progress with deposit/withdrawal functionality.
+*   **Sign Up/Login**: Create an account using email/password or sign in with Google. Use "Guest Mode" for a quick preview.
+*   **Add Transaction**: Click the "+" button to record a new income or expense.
+*   **Set Budgets**: Navigate to the Budgets tab to define monthly limits for specific categories.
+*   **Manage Savings**: Go to the Goals tab to create savings targets and contribute funds.
+*   **View Reports**: The Dashboard provides a visual breakdown of your financial activity.
 
-*   **📈 Visual Analytics**: Comprehensive data visualization using Recharts for clear financial insights.
+### Screenshot
+ ![Budged](https://i.ibb.co/sGN8JfF/expence-budged.png)
 
-*   **🌍 Multi-language Support**: Fully localized interface (English & Ukrainian) powered by i18next.
-
-*   **🎨 Theme Customization**: Native support for Dark and Light modes with system preference detection.
-
-*   **🔐 Secure Authentication**: Robust user management via Firebase (Email/Password, Google Auth, Guest Access).
-
-*   **📱 Responsive Design**: Fully optimized experience across desktop, tablet, and mobile devices.
-
-
-
-  
-
-**Dashboard**
-
-![Dashboard](https://i.postimg.cc/kXVwhD5s/dashboard-new-1-q.png)
-
-
-  
-
-## 🛠️ Technology Stack
-
-  
-
-The project leverages a modern stack to ensure performance, type safety, and developer experience.
-
-  
-
-### **Core**
-
-*   **Framework**: [React 19](https://react.dev/) - The library for web and native user interfaces.
-
-*   **Language**: [TypeScript](https://www.typescriptlang.org/) - Strongly typed superset of JavaScript.
-
-*   **Build Tool**: [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling.
-
-*   **Architecture**: [Feature-Sliced Design (FSD)](https://feature-sliced.design/) - Architectural methodology for frontend projects.
-
-  
-
-### **State Management & Data**
-
-*   **Global State**: [Redux Toolkit](https://redux-toolkit.js.org/) - The official, opinionated, batteries-included toolset for efficient Redux development.
-
-*   **Backend (BaaS)**: [Firebase](https://firebase.google.com/) - Authentication and Firestore Database.
-
-  
-
-### **UI & Styling**
-
-*   **Styling**: SCSS Modules & [clsx](https://github.com/lukeed/clsx) - For modular and conditional styling.
-
-*   **Components**: [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components for building high-quality design systems.
-
-*   **Animations**: [Framer Motion](https://www.framer.com/motion/) - Production-ready motion library for React.
-
-*   **Icons**: [Lucide React](https://lucide.dev/) - Beautiful & consistent icons.
-
-*   **Charts**: [Recharts](https://recharts.org/) - Redefined chart library built with React and D3.
-
-  
-
-### **Forms & Validation**
-
-*   **Form Handling**: [React Hook Form](https://react-hook-form.com/) - Performant, flexible and extensible forms.
-
-*   **Validation**: [Zod](https://zod.dev/) - TypeScript-first schema declaration and validation.
-
-  
-
-### **Utilities**
-
-*   **Dates**: [date-fns](https://date-fns.org/) - Modern JavaScript date utility library.
-
-*   **Internationalization**: [i18next](https://www.i18next.com/) - Internationalization framework.
-
-  
 
 ---
 
-  
+## Installation Instructions
 
-## 📂 Documentation & Architecture
+Follow these steps to set up the project locally.
+### Prerequisites
+*   **Node.js**: v18.0.0 or higher
+*   **npm** (v9+) or **yarn** (v3+)
+### Step-by-Step Setup
 
-  
+1.  **Clone the repository**
 
-### Feature-Sliced Design (FSD)
+    ```bash
 
-This project is structured according to FSD principles, dividing the codebase into layers based on responsibility:
+    git clone https://github.com/mirasto/expense-tracker.git
 
-  
+    cd expense-tracker
 
-```txt
+    ```
 
-src/
+2.  **Install dependencies**
 
-├── app/        # Global setup (providers, styles, store configuration)
+    ```bash
 
-├── pages/      # Page composition and routing (Dashboard, Settings, etc.)
+    npm install
 
-├── widgets/    # Large UI blocks (Sidebar, Header, DashboardStats)
+    # or
 
-├── features/   # User interactions (AddTransaction, Login, ChangeTheme)
+    yarn install
 
-├── entities/   # Business domain models (Transaction, Budget, SavingsGoal)
+    ```
 
-└── shared/     # Reusable UI kit, utilities, helpers, and configuration
+3.  **Configure Environment Variables**
+    Create a `.env` file in the root directory by copying the example file:
 
-```
+    ```bash
 
-  
+    cp .env.example .env
 
+    ```
+    Then, open `.env` and fill in your Firebase configuration keys:
+    ```env
+
+    VITE_FIREBASE_API_KEY=your_api_key
+
+    VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+
+    VITE_FIREBASE_PROJECT_ID=your_project_id
+
+    VITE_FIREBASE_STORAGE_BUCKET=your_bucket.appspot.com
+
+    VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+
+    VITE_FIREBASE_APP_ID=your_app_id
+
+    ```
+4.  **Start the Development Server**
+    ```bash
+
+    npm run dev
+
+    ```
+    The application will be available at `http://localhost:5173`.
 ---
 
-### 📸 Screenshots
-
-**Budget Management**
-
-![Budget](https://i.ibb.co/WWKVzS4D/budget.png)
 
   
 
-**Savings Goals**
-
-![Saving Goals](https://i.ibb.co/sv6BzD4Z/goals.png)
-
-  
-
----
-
-
-## � Development Information
-
-  
-
-### Getting Started
-
-  
-
-Follow these instructions to set up the project locally.
-
-  
-
-#### 1. Prerequisites
-
-*   **Node.js**: v18 or higher
-
-*   **Package Manager**: npm or yarn
-
-  
-
-#### 2. Installation
-
-  
-
-Clone the repository:
-
-```bash
-
-git clone https://github.com/mirasto/expence-tracker.git
-
-cd expence-tracker
-
-```
-
-  
-
-Install dependencies:
-
-```bash
-
-npm install
-
-```
-
-  
-
-#### 3. Environment Setup
-
-  
-
-Create a `.env` file in the root directory and configure your Firebase credentials. You can use `.env.example` as a reference.
-
-  
-
-```env
-
-VITE_FIREBASE_API_KEY=your_api_key
-
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-
-VITE_FIREBASE_PROJECT_ID=your_project_id
-
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-
-VITE_FIREBASE_APP_ID=your_app_id
-
-```
-
-  
-
-#### 4. Running the App
-
-  
-
-Start the development server:
-
-```bash
-
-npm run dev
-
-```
-
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-  
-
-### Testing & Quality
-
-  
-
-*   **Linting**: Run `npm run lint` to check for code style issues.
-
-*   **Type Checking**: Run `npm run check` to verify TypeScript types.
-
-*   **Unit Tests**: Run `npm run test` (if configured) to execute test suites.
-
-  
-
-### Building for Production
-
-  
-
-To create a production-ready build:
-
-```bash
-
-npm run build
-
-```
-
-To preview the production build locally:
-
-```bash
-
-npm run preview
-
-```
