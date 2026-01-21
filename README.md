@@ -27,7 +27,7 @@ The application provides a seamless and intuitive interface for tracking income 
 
 ### Architecture
 
-This project follows the **[Feature-Sliced Design (FSD)](https://feature-sliced.design/)** methodology to ensure maintainability and scalability.
+This project follows the Feature-Sliced Design (FSD)** methodology to ensure maintainability and scalability.
 
 *   **`app/`**: Global app setup (providers, styles, routing).
 *   **`pages/`**: Composition layer for constructing full pages.
@@ -54,71 +54,69 @@ This project follows the **[Feature-Sliced Design (FSD)](https://feature-sliced.
 ### Screenshot
  ![Budged](https://i.ibb.co/sGN8JfF/expence-budged.png)
 
-
 ---
 
 ## Installation Instructions
 
-Follow these steps to set up the project locally.
-### Prerequisites
-*   **Node.js**: v18.0.0 or higher
-*   **npm** (v9+) or **yarn** (v3+)
+Follow these steps to set up the project locally on your machine.
+
+---
+
+### 🛠 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+* **Node.js**: `v18.0.0` or higher
+* **Package Manager**: **npm** (`v9+`) or **yarn** (`v3+`)
+
+---
+
 ### Step-by-Step Setup
 
-1.  **Clone the repository**
+1. **Clone the repository**
+```bash
+git clone https://github.com/mirasto/expense-tracker.git
+cd expense-tracker
 
-    ```bash
+```
 
-    git clone https://github.com/mirasto/expense-tracker.git
 
-    cd expense-tracker
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
 
-    ```
+```
 
-2.  **Install dependencies**
 
-    ```bash
+3. **Configure Environment Variables**
+Create a `.env` file in the root directory by copying the example file:
+```bash
+cp .env.example .env
 
-    npm install
+```
 
-    # or
 
-    yarn install
+Then, open `.env` and fill in your **Firebase** configuration keys:
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
 
-    ```
+```
 
-3.  **Configure Environment Variables**
-    Create a `.env` file in the root directory by copying the example file:
 
-    ```bash
+4. **Start the Development Server**
+```bash
+npm run dev
 
-    cp .env.example .env
+```
 
-    ```
-    Then, open `.env` and fill in your Firebase configuration keys:
-    ```env
 
-    VITE_FIREBASE_API_KEY=your_api_key
-
-    VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-
-    VITE_FIREBASE_PROJECT_ID=your_project_id
-
-    VITE_FIREBASE_STORAGE_BUCKET=your_bucket.appspot.com
-
-    VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-
-    VITE_FIREBASE_APP_ID=your_app_id
-
-    ```
-4.  **Start the Development Server**
-    ```bash
-
-    npm run dev
-
-    ```
-    The application will be available at `http://localhost:5173`.
----
 
 
   
