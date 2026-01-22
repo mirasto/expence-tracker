@@ -1,16 +1,22 @@
 # Expense Tracker
 
 
-![Vite](https://img.shields.io/badge/vite-%5E5.0-646CFF?logo=vite) ![React](https://img.shields.io/badge/react-%5E19.0.0-61DAFB?logo=react) ![TypeScript](https://img.shields.io/badge/typescript-%5E5.0-3178C6?logo=typescript) ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-6441AA?logo=redux&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%5E10.0.0-FFCA28?logo=firebase)
+![Vite](https://img.shields.io/badge/Vite-%5E5.0-646CFF?logo=vite&style=for-the-badge)
+![React](https://img.shields.io/badge/React-%5E19.0.0-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-%5E5.0-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-6441AA?logo=redux&logoColor=white&style=for-the-badge)
+![Firebase](https://img.shields.io/badge/Firebase-%5E10.0.0-FFCA28?logo=firebase&logoColor=black&style=for-the-badge)
+
+
 
 
 ![Dashboard](https://i.ibb.co/WN6Nbysf/Expence-dashboard.png)
 
 ## 1. Project Overview
 
-**Expense Tracker** is personal finance management application designed to help users take control of their financial health. Built with performance and scalability in mind, it utilizes **React 19**, **TypeScript**, and follows the **Feature-Sliced Design (FSD)** architecture.
+**Expense Tracker** is a personal finance management application that helps users track income and expenses, set monthly budgets, and manage savings goals. Built with React 19, TypeScript, and Vite, it follows the Feature-Sliced Design (FSD) methodology for maintainable and scalable code.
 
-The application provides a seamless and intuitive interface for tracking income and expenses, setting monthly budgets, and managing long-term savings goals. With real-time analytics and multi-language support, it caters to a diverse range of users looking to optimize their spending habits.
+The app uses Redux Toolkit and Firebase for state management and secure authentication, SCSS Modules and clsx for styling, and Recharts for interactive data visualizations. It supports multiple languages (English & Ukrainian), dark/light themes, and is fully responsive on desktop, tablet, and mobile devices.
 ### Key Features
 
 *   **Dashboard Overview**: Real-time summary of financial health with interactive charts (Monthly Trends, Expense Distribution).
