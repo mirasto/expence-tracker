@@ -8,7 +8,7 @@
 
 ## 1. Project Overview
 
-**Expense Tracker** is a modern, feature-rich personal finance management application designed to help users take control of their financial health. Built with performance and scalability in mind, it utilizes **React 19**, **TypeScript**, and follows the **Feature-Sliced Design (FSD)** architecture.
+**Expense Tracker** is personal finance management application designed to help users take control of their financial health. Built with performance and scalability in mind, it utilizes **React 19**, **TypeScript**, and follows the **Feature-Sliced Design (FSD)** architecture.
 
 The application provides a seamless and intuitive interface for tracking income and expenses, setting monthly budgets, and managing long-term savings goals. With real-time analytics and multi-language support, it caters to a diverse range of users looking to optimize their spending habits.
 ### Key Features
