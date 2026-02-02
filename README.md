@@ -68,7 +68,7 @@ Follow these steps to set up the project locally on your machine.
 
 ---
 
-### 🛠 Prerequisites
+### Prerequisites
 
 Before you begin, ensure you have the following installed:
 
